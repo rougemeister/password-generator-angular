@@ -26,7 +26,13 @@ h1 {
     margin-bottom: 18px;
 }
 
-i {
+.display-length {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+i,
+.display-length {
     color: #A4FFAF;
 }
 
@@ -110,16 +116,31 @@ button {
     border: none;
 }
 
+.bars {
+    display: flex;
+    gap: 5px;
+}
+.bar {
+    border: 2px solid white;
+    width: 5px;
+    height: 20px;
+}
+
 .strength-wrapper {
     display: flex;
     background-color: #18171F;
-    padding: 18px 15px;
+    padding: 18px 25px;
     margin-top: 32px;
     margin-bottom: 16px;
     font-weight: 700;
 }
 .strength {
     text-transform: uppercase;
+}
+.meter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 .tag {
     color: #817D92;

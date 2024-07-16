@@ -10,13 +10,13 @@
         <label for="">Character Length</label>
         <div class="display-length">{{length}}</div>
       </div>
-      <input id="select-range" type="range" [(ngModel)]="length" name="length" required min="8" max="20" (input)="updateValue($event)">
+      <input id="select-range" type="range" [(ngModel)]="length" name="length" required min="5" max="15" (input)="updateValue($event)">
       <div class="password-type-wrapper">
         <input id="uppercase" type="checkbox"  [(ngModel)]="includeUpper" name="uppercase">
         <label for="uppercase">Include Uppercase Letters</label>
       </div>
       <div class="password-type-wrapper">
-        <input id="lowercase" type="checkbox" checked="checked">
+        <input id="lowercase" type="checkbox">
         <label for="lowercase">Include Lowercase Letters</label>
       </div>
       <div class="password-type-wrapper">
@@ -29,15 +29,32 @@
       </div>
       <div class="strength-wrapper">
         <p class="tag">STRENGTH</p>
+        <div class="meter">
         <p  class="strength">{{strength}}</p>
-        <div class="bars">
-          @if(strength === 'Weak'){
-            <p>Too sure</p>
-          }
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+    
+          <div class="bars">
+            @if(strength === "Too Weak"){
+            <div class="bar" style="background-color: #F64A4A; border: 2px solid #F64A4A ;"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            }@else if(strength === "Weak"){
+              <div class="bar" style="background:#FB7C58; border: 2px solid #FB7C58;"></div>
+              <div class="bar" style="background:#FB7C58; border: 2px solid #FB7C58;"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            } @else if (strength === "Medium") {
+              <div class="bar" style="background: #F8CD65; border:2px solid #F8CD65;"></div>
+              <div class="bar" style="background: #F8CD65; border:2px solid #F8CD65;"></div>
+              <div class="bar" style="background: #F8CD65; border:2px solid #F8CD65;"></div>
+              <div class="bar"></div>
+            } @else {
+              <div class="bar" style="background: #A4FFAF; border: 2px solid #A4FFAF;"></div>
+              <div class="bar" style="background: #A4FFAF; border: 2px solid #A4FFAF;"></div>
+              <div class="bar" style="background: #A4FFAF; border: 2px solid #A4FFAF;"></div>
+              <div class="bar" style="background: #A4FFAF; border: 2px solid #A4FFAF;"></div>
+            }
+          </div>
         </div>
       </div>
       <button>Generate <i class="fa-solid fa-arrow-right"></i> </button>
