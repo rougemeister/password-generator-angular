@@ -62,6 +62,50 @@ i,
     color: #A4FFAF;
 }
 
+
+
+
+
+
+// Input //
+
+/*** Checkboxes ***/
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    border: 2px solid #D8D8D8;
+    cursor: pointer;
+    margin-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+}
+
+input[type="checkbox"]::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 1000;
+    content: "\f00c";
+    font-size: 12px;
+    color: #18171F;
+    display: none;
+}
+input[type="checkbox"]:hover {
+    background-color: #817D92;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #A4FFAF;
+}
+input[type="checkbox"]:checked::after{
+    display: block;
+}
+
+
+/* Range Input */
 input[type="range"] {
     appearance: none;
     width: 100%;
@@ -137,6 +181,9 @@ input[type="range"] {
     cursor: pointer;
     margin-top: 0px;
   }
+
+
+/**** Form styles ****/
 form {
     padding: 18px;
     background-color: #24232C;
@@ -157,38 +204,11 @@ form {
 
 }
 
-input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    height: 18px;
-    width: 18px;
-    border: 2px solid #D8D8D8;
-    cursor: pointer;
-    margin-right: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    outline: none;
-}
 
-input[type="checkbox"]::after{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 1000;
-    content: "\f00c";
-    font-size: 12px;
-    color: #18171F;
-    display: none;
-}
-input[type="checkbox"]:hover {
-    background-color: #817D92;
-}
 
-input[type="checkbox"]:checked {
-    background-color: #A4FFAF;
-}
-input[type="checkbox"]:checked::after{
-    display: block;
-}
+
+
+// button //
 
 button {
     width: 100%;
@@ -251,6 +271,9 @@ button:hover {
     color: #24232C;
 }
 
+
+
+/*** Media Queries ***/
 
 @media only screen and (min-width: 600px) {
     main {
