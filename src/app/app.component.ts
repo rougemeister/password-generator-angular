@@ -40,4 +40,6 @@ export class AppComponent {
       alert('Failed to copy password to clipboard.');
     });
   }
+
+  
 }
