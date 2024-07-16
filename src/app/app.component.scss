@@ -1,0 +1,131 @@
+main {
+    margin: auto;
+    width: 345px;
+    height: 540px;
+}
+
+h1 {
+    font-size: 16px;
+    text-align: center;
+    color: #817D92;
+    margin-bottom: 16px;
+    
+}
+
+.display-password {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 15px;
+    background-color: #24232C;
+    overflow: hidden;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+i {
+    color: #A4FFAF;
+}
+
+
+input[type="range"] {
+    width: 100%;
+    background-color: none;
+    margin-bottom: 32px;
+}
+
+
+
+ 
+input[type=range]::-moz-progress-bar {
+background-color: #A4FFAF;
+  }
+
+form {
+    padding: 18px;
+    background-color: #24232C;
+}
+
+
+.range-label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.password-type-wrapper {
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    border: 2px solid #D8D8D8;
+    cursor: pointer;
+    margin-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+}
+
+input[type="checkbox"]::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 1000;
+    content: "\f00c";
+    font-size: 12px;
+    color: #18171F;
+    display: none;
+}
+input[type="checkbox"]:hover {
+    background-color: #817D92;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #A4FFAF;
+}
+input[type="checkbox"]:checked::after{
+    display: block;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    font-family: inherit;
+    background-color: #A4FFAF;
+    color: #24232C;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.strength-wrapper {
+    display: flex;
+    background-color: #18171F;
+    padding: 18px 15px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.tag {
+    color: #817D92;
+}
+.strength-wrapper div {
+    margin-left: auto;
+}
+.strength-wrapper .strength {
+    margin-left: auto;
+}
+.fa-arrow-right {
+    color: #24232C;
+}

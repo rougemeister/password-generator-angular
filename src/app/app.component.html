@@ -1,35 +1,38 @@
 <main>
   <div class="container">
     <h1>Password Generator</h1>
-    <div class="display-password">885555521</div>
+    <div class="display-password">
+      <div class="password">885522</div>
+      <i class="fa-regular fa-copy"></i>
+    </div>
     <form action="">
-      <div>
-        <label for=""></label>
+      <div class="range-label-wrapper">
+        <label for="">Character Length</label>
         <div>10</div>
       </div>
-      <input type="range">
-      <div class="uppercase">
-        <input type="checkbox">
-        <label for=""></label>
+      <input id="select-range" type="range">
+      <div class="password-type-wrapper">
+        <input id="uppercase" type="checkbox">
+        <label for="uppercase">Include Uppercase Letters</label>
       </div>
-      <div class="uppercase">
-        <input type="checkbox">
-        <label for=""></label>
+      <div class="password-type-wrapper">
+        <input id="lowercase" type="checkbox">
+        <label for="lowercase">Include Lowercase Letters</label>
       </div>
-      <div class="uppercase">
-        <input type="checkbox">
-        <label for=""></label>
+      <div class="password-type-wrapper">
+        <input id="numbers" type="checkbox">
+        <label for="numbers">Include Numbers</label>
       </div>
-      <div class="uppercase">
-        <input type="checkbox">
-        <label for=""></label>
+      <div class="password-type-wrapper">
+        <input id="symbols" type="checkbox">
+        <label for="symbols">Include Symbols</label>
       </div>
-      <div class="strength">
-        <p class="strength"></p>
-        <p>Medium</p>
+      <div class="strength-wrapper">
+        <p class="tag">STRENGTH</p>
+        <p  class="strength">MEDIUM</p>
         <div>Bars</div>
       </div>
-      <button>Generate </button>
+      <button>Generate <i class="fa-solid fa-arrow-right"></i> </button>
       
     </form>
   </div>

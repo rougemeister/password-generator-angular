@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: #18171F;
+    color: #E6E5EA;
+    justify-content: center;
+    align-items: center;
+    font-family: "JetBrains Mono", monospace;
+
+}
+
