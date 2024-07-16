@@ -1,13 +1,43 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { PasswordService } from './services/password.service'
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'password-generator-angular';
+
+  length = 12;
+  includeUpper = true;
+  includeNumbers = true;
+  includeSpecial = true;
+  password!: string;
+  strength!: string;
+
+
+  constructor(public passwordService: PasswordService) { }
+
+  updateValue(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    this.length = Number(inputElement.value);
+  }
+  generatePassword() {
+    this.password = this.passwordService.generatePassword(this.length, this.includeUpper, this.includeNumbers, this.includeSpecial);
+    this.strength = this.passwordService.getPasswordStrength(this.password);
+    console.log(this.strength)
+  }
+
+  copyToClipboard() {
+    navigator.clipboard.writeText(this.password).then(() => {
+      alert('Password copied to clipboard!');
+    }, () => {
+      alert('Failed to copy password to clipboard.');
+    });
+  }
 }

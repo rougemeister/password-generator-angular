@@ -2,35 +2,43 @@
   <div class="container">
     <h1>Password Generator</h1>
     <div class="display-password">
-      <div class="password">885522</div>
-      <i class="fa-regular fa-copy"></i>
+      <div class="password">{{password}}</div>
+      <i class="fa-regular fa-copy" (click)="copyToClipboard()"></i>
     </div>
-    <form action="">
+    <form (ngSubmit)="generatePassword()">
       <div class="range-label-wrapper">
         <label for="">Character Length</label>
-        <div>10</div>
+        <div class="display-length">{{length}}</div>
       </div>
-      <input id="select-range" type="range">
+      <input id="select-range" type="range" [(ngModel)]="length" name="length" required min="8" max="20" (input)="updateValue($event)">
       <div class="password-type-wrapper">
-        <input id="uppercase" type="checkbox">
+        <input id="uppercase" type="checkbox"  [(ngModel)]="includeUpper" name="uppercase">
         <label for="uppercase">Include Uppercase Letters</label>
       </div>
       <div class="password-type-wrapper">
-        <input id="lowercase" type="checkbox">
+        <input id="lowercase" type="checkbox" checked="checked">
         <label for="lowercase">Include Lowercase Letters</label>
       </div>
       <div class="password-type-wrapper">
-        <input id="numbers" type="checkbox">
+        <input id="numbers" type="checkbox" [(ngModel)]="includeNumbers" name="numbers">
         <label for="numbers">Include Numbers</label>
       </div>
       <div class="password-type-wrapper">
-        <input id="symbols" type="checkbox">
-        <label for="symbols">Include Symbols</label>
+        <input  type="checkbox" id="special" [(ngModel)]="includeSpecial" name="special">
+        <label for="special">Include Symbols</label>
       </div>
       <div class="strength-wrapper">
         <p class="tag">STRENGTH</p>
-        <p  class="strength">MEDIUM</p>
-        <div>Bars</div>
+        <p  class="strength">{{strength}}</p>
+        <div class="bars">
+          @if(strength === 'Weak'){
+            <p>Too sure</p>
+          }
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
       <button>Generate <i class="fa-solid fa-arrow-right"></i> </button>
       
