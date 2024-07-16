@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Password Generator</h1>
     <div class="display-password">
-      <div class="password">{{password}}</div>
+      <input class="password" value="{{password}}" placeholder="P4$5W0rD!">
       <div>
       <span class="copied" [style.visibility]="isCopied ? 'visible' : 'hidden'">COPIED</span>
       <i class="fa-regular fa-copy" (click)="copyToClipboard()"></i>
@@ -19,7 +19,7 @@
         <label for="uppercase">Include Uppercase Letters</label>
       </div>
       <div class="password-type-wrapper">
-        <input id="lowercase" type="checkbox">
+        <input id="lowercase" type="checkbox" [defaultChecked]="true">
         <label for="lowercase">Include Lowercase Letters</label>
       </div>
       <div class="password-type-wrapper">
