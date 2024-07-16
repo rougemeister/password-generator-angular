@@ -37,6 +37,7 @@ none: any;
   generatePassword() {
     this.password = this.passwordService.generatePassword(this.length, this.includeUpper, this.includeNumbers, this.includeSpecial);
     this.strength = this.passwordService.getPasswordStrength(this.password);
+    this.isCopied = false;
   }
 
  isCopied = false;
