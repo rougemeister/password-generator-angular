@@ -2,8 +2,11 @@
   <div class="container">
     <h1>Password Generator</h1>
     <div class="display-password">
-      <div class="password" aria-placeholder="P4$5W0rD!">{{password}}</div>
+      <div class="password">{{password}}</div>
+      <div>
+      <span class="copied" [style.visibility]="isCopied ? 'visible' : 'hidden'">COPIED</span>
       <i class="fa-regular fa-copy" (click)="copyToClipboard()"></i>
+    </div>
     </div>
     <form (ngSubmit)="generatePassword()">
       <div class="range-label-wrapper">
@@ -33,7 +36,7 @@
         <p  class="strength">{{strength}}</p>
     
           <div class="bars">
-            @if(strength === "Too Weak"){
+            @if(strength === "Too Weak!"){
             <div class="bar" style="background-color: #F64A4A; border: 2px solid #F64A4A ;"></div>
             <div class="bar"></div>
             <div class="bar"></div>
