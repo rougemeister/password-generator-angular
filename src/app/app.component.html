@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Password Generator</h1>
     <div class="display-password">
-      <div class="password">{{password}}</div>
+      <div class="password" aria-placeholder="P4$5W0rD!">{{password}}</div>
       <i class="fa-regular fa-copy" (click)="copyToClipboard()"></i>
     </div>
     <form (ngSubmit)="generatePassword()">

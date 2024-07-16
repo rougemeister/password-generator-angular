@@ -21,6 +21,7 @@ export class AppComponent {
   strength!: string;
 
 
+
   constructor(public passwordService: PasswordService) { }
 
   updateValue(event: Event): void {
