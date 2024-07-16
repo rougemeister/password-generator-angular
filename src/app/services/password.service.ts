@@ -35,11 +35,11 @@ export class PasswordService {
     const hasNumber = /\d/.test(password);
     const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
 
-    const strength = [length > 8, hasUpper, hasLower, hasNumber, hasSpecial].filter(Boolean).length;
+    const strength = [hasUpper, hasLower, hasNumber, hasSpecial].filter(Boolean).length;
 
-    if (strength < 3) return 'Too Weak!';
-    if (strength < 4) return 'Weak';
-    if (strength < 5) return 'Medium'
+    if (length <= 8 ) return 'Too Weak!';
+    if (length > 8 && strength < 2) return 'Weak';
+    if (length > 8 && strength <= 2) return 'Medium'
     return 'Strong';
   }
 }
