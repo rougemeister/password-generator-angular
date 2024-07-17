@@ -37,8 +37,8 @@ export class PasswordService {
 
     const strength = [hasUpper, hasLower, hasNumber, hasSpecial].filter(Boolean).length;
 
-    if (length <= 8 ) return 'Too Weak!';
-    if (length > 8 && strength < 2) return 'Weak';
+    if (length < 8 ) return 'Too Weak!';
+    if (length >= 8 && strength < 2) return 'Weak';
     if (length > 8 && strength <= 2) return 'Medium'
     return 'Strong';
   }
