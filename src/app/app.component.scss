@@ -230,7 +230,8 @@ button {
 
 button:hover {
     background-color: #24232C;
-    border: 2px solid #A4FFAF;;
+    border: 2px solid #A4FFAF;
+    box-shadow: 0 0 8px #A4FFAF;
     color: #A4FFAF;
     .fa-arrow-right {
         color: #A4FFAF ;
